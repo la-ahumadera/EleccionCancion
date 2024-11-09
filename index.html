@@ -87,28 +87,22 @@
     <p class="subtitle">Peticiones Musicales</p>
     <div class="container">
         <div class="form-group">
-            <label for="songName">Nombre de la canción:</label>
-            <input type="text" id="songName" placeholder="Escribe el nombre de la canción">
-        </div>
-        <div class="form-group">
-            <label for="artistName">Nombre del artista:</label>
-            <input type="text" id="artistName" placeholder="Escribe el nombre del artista">
+            <label for="songInfo">Canción y Artista:</label>
+            <input type="text" id="songInfo" placeholder="Ejemplo: Amor Eterno - Juan Gabriel">
         </div>
         <button onclick="compartirPorWhatsApp()">Enviar por WhatsApp</button>
     </div>
-
     <script>
         function compartirPorWhatsApp() {
-            const cancion = document.getElementById('songName').value;
-            const artista = document.getElementById('artistName').value;
+            const songInfo = document.getElementById('songInfo').value;
             
-            if (!cancion || !artista) {
-                alert('Por favor, completa todos los campos');
+            if (!songInfo) {
+                alert('Por favor, ingresa la canción y el artista');
                 return;
             }
             
-            const mensaje = `🎶 LA AHUMADERA 🎶\nCanción: ${cancion}\nArtista: ${artista}`;
-            const url = `https://wa.me/525540035330?text=${encodeURIComponent(mensaje)}`;
+            const mensaje = `🎶 LA AHUMADERA 🎶\nCanción solicitada: ${songInfo}`;
+            const url = `https://wa.me/5555079259?text=${encodeURIComponent(mensaje)}`;
             window.open(url, '_blank');
         }
     </script>
